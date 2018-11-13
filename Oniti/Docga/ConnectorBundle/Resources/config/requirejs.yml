@@ -1,0 +1,5 @@
+config:
+    paths:
+        oniti/docga/connector/field-docga:                onitidocgaconnector/js/product/field/docga-field
+        oniti/docga/connector/system/configuration:               onitidocgaconnector/js/form/system
+        oniti/docga/connector/attributes/product-info:            onitidocgaconnector/js/product/form/attributes/product-info

@@ -1,0 +1,13 @@
+services:
+    oniti.docga.array_converter.standard_to_flat.product.value_converter.docga:
+        class: Oniti\Docga\ConnectorBundle\ArrayConverter\StandardToFlat\Product\ValueConverter\DocgaValueConverter
+        arguments:
+            - '@pim_connector.array_converter.flat_to_standard.product.attribute_columns_resolver'
+        tags:
+            - { name: 'pim_connector.array_converter.standard_to_flat.product.value_converter' }
+
+    oniti.docga.array_converter.flat_to_standard.product.value_converter.docga:
+        class: Oniti\Docga\ConnectorBundle\ArrayConverter\FlatToStandard\Product\ValueConverter\DocgaValueConverter
+        parent: pim_connector.array_converter.flat_to_standard.product.value_converter.abstract
+        tags:
+            - { name: 'pim_connector.array_converter.flat_to_standard.product.value_converter' }

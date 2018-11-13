@@ -1,0 +1,5 @@
+services:
+    einden.ephoto.comparator.ephoto_type:
+        class: Oniti\Docga\ConnectorBundle\Comparator\Attribute\DocgaComparator
+        tags:
+            - { name: pim_catalog.attribute.comparator }

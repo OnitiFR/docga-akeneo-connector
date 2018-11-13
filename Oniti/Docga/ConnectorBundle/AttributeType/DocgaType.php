@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Ephoto Connector Bundle package.
+ *  Détermine le nom de l'attribut
  */
 
 namespace Oniti\Docga\ConnectorBundle\AttributeType;
@@ -13,6 +13,6 @@ class DocgaType extends AbstractAttributeType
 {
 	public function getName()
 	{
-		return 'onti_catalog_docga';
+		return 'oniti_catalog_docga';
 	}
 }

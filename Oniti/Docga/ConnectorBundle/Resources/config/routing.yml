@@ -1,0 +1,4 @@
+oniti_docga_get_config:
+    path: /docga/config
+    defaults: { _controller: OnitiDocgaConnectorBundle:Rest:getConfig }
+    methods: [GET]

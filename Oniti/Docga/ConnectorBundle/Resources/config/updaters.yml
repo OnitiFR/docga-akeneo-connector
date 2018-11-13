@@ -1,0 +1,8 @@
+services:
+    pim_catalog.updater.setter.oniti_catalog_docga:
+        class: Oniti\Docga\ConnectorBundle\Updater\DocgaAttributeSetter
+        parent: pim_catalog.updater.setter.abstract
+        arguments:
+            - ['oniti_catalog_docga']
+        tags:
+            - { name: 'pim_catalog.updater.setter' }

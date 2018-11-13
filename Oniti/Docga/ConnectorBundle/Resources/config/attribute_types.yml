@@ -1,0 +1,24 @@
+parameters:
+    pim_datagrid.product.attribute_type.oniti_catalog_docga:
+        column:
+            type:        product_value_docga
+            selector:    product_value_base
+            frontend_type: html
+        filter:
+            type:        product_value_docga
+            ftype:       boolean
+            options:
+                field_options:
+                    attr:
+                        empty_choice: true
+        sorter:          ~
+
+services:
+    einden.ephoto.catalog.attributetype.ephoto:
+      class: Oniti\Docga\ConnectorBundle\AttributeType\DocgaType
+      arguments:
+          - text
+          - text
+          - '@pim_catalog.validator.constraint_guesser.chained_attribute'
+      tags:
+          - { name: pim_catalog.attribute_type, alias: oniti_catalog_docga, entity: '%pim_catalog.entity.product.class%' }

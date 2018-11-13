@@ -1,0 +1,12 @@
+services:
+    oniti.docga.connector.provider.field.ephoto:
+        class: Oniti\DOcga\ConnectorBundle\Enrich\Provider\Field\EphotoFieldProvider
+        tags:
+            - { name: pim_enrich.provider.field, priority: 90 }
+
+    oniti.docga.serializer.denormalizer.attribute:
+        class: Oniti\Docga\ConnectorBundle\Extension\Denormalizer\Standard\AttributDenormalizer
+        arguments:
+            - ['oniti_catalog_docga']
+        tags:
+            - { name: pim_serializer.normalizer, priority: 90 }

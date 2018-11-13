@@ -1,0 +1,13 @@
+extensions:
+    oniti-docga-system-configuration:
+        module: oniti/docga/connector/system/configuration
+        parent: oro-system-config-system
+        targetZone: content
+        position: 120
+    oniti-docga-product-edit-form-product-info:
+        module: oniti/docga/connector/attributes/product-info
+        parent: pim-product-edit-form-attributes
+        targetZone: self
+        position: 100
+attribute_fields:
+    oniti-docga-field: oniti/docga/connector/field-docga

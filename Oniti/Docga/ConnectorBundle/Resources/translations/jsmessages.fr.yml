@@ -1,0 +1,17 @@
+docga:
+  field:
+    select_file: Sélectionner un fichier
+    view_file: Voir le fichier
+    download_file: Télécharger le fichier
+    remove_file: Retirer le fichier
+    no_files_selected: Aucun fichier sélectionné
+    an_error_has_occurred: Une erreur a été rencontré
+    docga_server_is_unavailable: Le serveur Docga est indisponible
+  configuration:
+    base_url:
+      label: URL du serveur
+      placeholder : https://docga.xxx
+    tab: Docga
+    copyright:
+      label: © 2018 Oniti. All right reserved.
+      url: https://www.oniti.fr
