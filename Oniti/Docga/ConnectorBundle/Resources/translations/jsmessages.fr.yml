@@ -11,6 +11,12 @@ docga:
     base_url:
       label: URL du serveur
       placeholder : https://docga.xxx
+    api_key:
+      label: Clé d'api
+      placeholder : Votre clé d'api
+    api_secret:
+      label: API Secret
+      placeholder : Votre secret
     tab: Docga
     copyright:
       label: © 2018 Oniti. All right reserved.

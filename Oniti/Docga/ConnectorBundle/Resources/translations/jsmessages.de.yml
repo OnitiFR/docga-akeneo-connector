@@ -9,8 +9,14 @@ docga:
     docga_server_is_unavailable: Docga server is unavailable
   configuration:
     base_url:
-      label: URL du serveur
+      label: server URL
       placeholder : https://docga.xxxx
+    api_key:
+      label: API Key
+      placeholder : you're key
+    api_secret:
+      label: API Secret
+      placeholder : you're secret
     tab: Docga
     copyright:
       label: © 2018 Oniti. All right reserved.
