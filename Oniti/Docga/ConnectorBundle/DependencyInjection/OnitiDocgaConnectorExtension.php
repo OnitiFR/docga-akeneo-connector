@@ -52,7 +52,7 @@ class OnitiDocgaConnectorExtension extends Extension implements PrependExtension
     {
         $loader->load('attribute_icons.yml');
         $icons = $container->getParameter('pim_enrich.attribute_icons');
-        $icons += $container->getParameter('docga.docga.attribute_icons');
+        $icons += $container->getParameter('oniti.docga.attribute_icons');
         $container->setParameter('pim_enrich.attribute_icons', $icons);
     }
 
