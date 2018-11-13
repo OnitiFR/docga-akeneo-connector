@@ -1,5 +1,6 @@
 {
     "name": "oniti/docga-akeneo-connector",
+    "version": "1.0.0",
     "type": "symfony-bundle",
     "description": "Extention Docga pour Akeneo",
     "keywords": ["pim", "akeneo", "onti", "docga"],
