@@ -10,7 +10,7 @@
     }],
     "repositories": [{
         "type": "vcs",
-        "url": "https://git.oniti.fr/groupe-atlantic/akaneo-docga",
+        "url": "git@github.com:hyosh/docga-akaneo-connector.git",
         "branch": "master"
     }],
     "require": {
