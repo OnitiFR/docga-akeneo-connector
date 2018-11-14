@@ -1,5 +1,6 @@
 "use strict";
 
+
 define([
         'underscore',
         'oro/translator',
