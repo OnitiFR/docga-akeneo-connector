@@ -26,9 +26,9 @@ define([
                 this.$el.html(this.template({
                     base_url: this.getFormData()['pim_oniti_docga_connector___base_url'] ?
                         this.getFormData()['pim_oniti_docga_connector___base_url'].value : '',
-                    base_url: this.getFormData()['pim_oniti_docga_connector___api_key'] ?
+                    api_key: this.getFormData()['pim_oniti_docga_connector___api_key'] ?
                         this.getFormData()['pim_oniti_docga_connector___api_key'].value : '',
-                    base_url: this.getFormData()['pim_oniti_docga_connector___api_secret'] ?
+                    api_secret: this.getFormData()['pim_oniti_docga_connector___api_secret'] ?
                         this.getFormData()['pim_oniti_docga_connector___api_secret'].value : '',
                 }));
 

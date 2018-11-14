@@ -31,22 +31,22 @@ class Configuration implements ConfigurationInterface
 					 		->children()
 						 		->scalarNode('value')->end()
 						 		->scalarNode('scope')->end()
-						 		->end()
-							->end()
+						 	->end()
+						->end()
 						->arrayNode('api_key')
 					 		->children()
 						 		->scalarNode('value')->end()
 						 		->scalarNode('scope')->end()
-						 		->end()
-							->end()
+						 	->end()
+						->end()
 						->arrayNode('api_secret')
 							->children()
 								->scalarNode('value')->end()
 								->scalarNode('scope')->end()
-								->end()
 							->end()
 						->end()
-					->end();
+					->end()
+				->end();
 
 		$children->end();
 

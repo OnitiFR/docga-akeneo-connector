@@ -1,5 +1,5 @@
 <?php
-namespace Einden\Ephoto\ConnectorBundle\Updater;
+namespace Oniti\Docga\ConnectorBundle\Updater;
 
 use Pim\Component\Catalog\Builder\ProductBuilderInterface;
 use Pim\Component\Catalog\Model\AttributeInterface;
