@@ -92,6 +92,15 @@ define([
 					assets : assets
 				});
 			},
+
+            displayFile: function(){
+            },
+            selectFile: function(){
+            },
+            removeFile: function(){
+            },
+            downloadFile: function(){
+            },
 		});
 
 		return AssetSelectionView;
