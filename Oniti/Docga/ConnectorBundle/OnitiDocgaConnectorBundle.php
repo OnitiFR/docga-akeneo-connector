@@ -1,9 +1,5 @@
 <?php
 
-/*
- * This file is part of the Ephoto Connector Bundle package.
- */
-
 namespace Oniti\Docga\ConnectorBundle;
 
 use Oniti\Docga\ConnectorBundle\DependencyInjection\Compiler\OroConfigCompilerPass;
