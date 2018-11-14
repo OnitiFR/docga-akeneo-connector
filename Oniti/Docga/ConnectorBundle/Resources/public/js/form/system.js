@@ -1,7 +1,3 @@
-/*
- * This file is part of the Ephoto Connector Bundle package.
- */
-
 "use strict";
 
 define([
