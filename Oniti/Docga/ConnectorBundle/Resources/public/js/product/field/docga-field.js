@@ -93,6 +93,14 @@ define([
 				});
 			},
 
+			/**
+			 * Updates field
+			 */
+			updateField: function () {
+				this.setCurrentValue(this.assets && this.assets.length ? JSON.stringify(this.assets) : null);
+				this.render();
+			},
+
             displayFile: function(){
             },
             selectFile: function(){
