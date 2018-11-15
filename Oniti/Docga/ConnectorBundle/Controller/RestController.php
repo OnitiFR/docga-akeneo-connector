@@ -13,8 +13,7 @@ class RestController extends Controller
 	 *
 	 * @return JsonResponse
 	 */
-	public function getConfigAction()
-	{
+	public function getConfigAction(){
 		$config = $this->get('oro_config.global');
 
 		$values = [

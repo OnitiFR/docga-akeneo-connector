@@ -1,5 +1,5 @@
 services:
-    oniti.docga.connector.provider.field.ephoto:
+    oniti.docga.connector.provider.field.docga:
         class: Oniti\Docga\ConnectorBundle\Enrich\Provider\Field\DocgaFieldProvider
         tags:
             - { name: pim_enrich.provider.field, priority: 90 }

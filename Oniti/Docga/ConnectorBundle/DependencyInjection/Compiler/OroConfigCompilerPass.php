@@ -17,8 +17,7 @@ class OroConfigCompilerPass implements CompilerPassInterface
     /**
      * {@inheritDoc}
      */
-    public function process(ContainerBuilder $container)
-    {
+    public function process(ContainerBuilder $container){
         $configManagerDefinition = $container->findDefinition('oro_config.global');
         $settings = $configManagerDefinition->getArguments()[1];
 

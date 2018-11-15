@@ -17,12 +17,8 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 class OnitiDocgaConnectorExtension extends Extension implements PrependExtensionInterface
 {
 
-    public function prepend(ContainerBuilder $container)
-    {
-        $loader = new YamlFileLoader(
-                $container,
-                new FileLocator(__DIR__.'/../Resources/config')
-        );
+    public function prepend(ContainerBuilder $container){
+        $loader = new YamlFileLoader($container,new FileLocator(__DIR__.'/../Resources/config'));
 
         $loader->load('config.yml');
         $configs = $container->getExtensionConfig($this->getAlias());
@@ -30,13 +26,12 @@ class OnitiDocgaConnectorExtension extends Extension implements PrependExtension
         $container->prependExtensionConfig($this->getAlias(), $config);
     }
 
-    public function getAlias()
-    {
+    public function getAlias(){
         return 'pim_oniti_docga_connector';
     }
 
-    public function load(array $configs, ContainerBuilder $container)
-    {
+    public function load(array $configs, ContainerBuilder $container){
+
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 		$loader->load('converters.yml');

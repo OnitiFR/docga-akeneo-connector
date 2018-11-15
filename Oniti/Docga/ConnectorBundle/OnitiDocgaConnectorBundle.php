@@ -9,18 +9,16 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class OnitiDocgaConnectorBundle extends Bundle
 {
-	public function build(ContainerBuilder $container)
-	{
+	public function build(ContainerBuilder $container){
 		parent::build($container);
 		$container->addCompilerPass(new OroConfigCompilerPass());
 	}
 
-        public function getContainerExtension()
-        {
-            if (null === $this->extension) {
-                $this->extension = new OnitiDocgaConnectorExtension();
-            }
-
-            return $this->extension;
+    public function getContainerExtension(){
+        if (is_null($this->extension)) {
+            $this->extension = new OnitiDocgaConnectorExtension();
         }
+
+        return $this->extension;
+    }
 }

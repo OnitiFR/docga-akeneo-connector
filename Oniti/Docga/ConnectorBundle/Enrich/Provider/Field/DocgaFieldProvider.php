@@ -10,14 +10,11 @@ use Pim\Component\Catalog\Model\AttributeInterface;
 
 class DocgaFieldProvider implements FieldProviderInterface
 {
-	public function getField($attribute)
-	{
+	public function getField($attribute){
 		return 'oniti-docga-field';
 	}
 
-	public function supports($element)
-	{
-		return $element instanceof AttributeInterface &&
-				$element->getAttributeType() === 'oniti_catalog_docga';
+	public function supports($element){
+		return $element instanceof AttributeInterface && $element->getAttributeType() === 'oniti_catalog_docga';
 	}
 }

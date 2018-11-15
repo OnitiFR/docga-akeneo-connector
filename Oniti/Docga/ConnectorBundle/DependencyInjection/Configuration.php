@@ -17,8 +17,7 @@ class Configuration implements ConfigurationInterface
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getConfigTreeBuilder()
-	{
+	public function getConfigTreeBuilder(){
 		$treeBuilder = new TreeBuilder();
 
 		$root = $treeBuilder->root('pim_oniti_docga_connector');

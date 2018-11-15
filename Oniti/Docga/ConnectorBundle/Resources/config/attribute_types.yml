@@ -14,7 +14,7 @@ parameters:
         sorter:          ~
 
 services:
-    einden.ephoto.catalog.attributetype.ephoto:
+    oniti.docga.catalog.attributetype.docga:
       class: Oniti\Docga\ConnectorBundle\AttributeType\DocgaType
       arguments:
           - text

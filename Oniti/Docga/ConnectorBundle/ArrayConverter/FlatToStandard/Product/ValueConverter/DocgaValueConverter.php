@@ -6,9 +6,7 @@ use Pim\Component\Connector\ArrayConverter\FlatToStandard\Product\ValueConverter
 
 class DocgaValueConverter extends AbstractValueConverter
 {
-	public function __construct(
-		FieldSplitter $fieldSplitter
-	) {
+	public function __construct(FieldSplitter $fieldSplitter){
 		$this->supportedFieldType = ['oniti_catalog_docga'];
 
 		parent::__construct($fieldSplitter);
@@ -22,8 +20,7 @@ class DocgaValueConverter extends AbstractValueConverter
 	*
 	* @return array
 	*/
-	public function convert(array $attributeFieldInfo, $value)
-	{
+	public function convert(array $attributeFieldInfo, $value){
 		$result = [
 			$attributeFieldInfo['attribute']->getCode() => [
 				[

@@ -8,9 +8,7 @@ use Pim\Component\Connector\ArrayConverter\StandardToFlat\Product\ValueConverter
 
 class DocgaValueConverter extends AbstractValueConverter implements ValueConverterInterface
 {
-	public function __construct(
-			AttributeColumnsResolver $columnsResolver
-	) {
+	public function __construct(AttributeColumnsResolver $columnsResolver) {
 		parent::__construct($columnsResolver, ['oniti_catalog_docga']);
 	}
 
@@ -22,8 +20,7 @@ class DocgaValueConverter extends AbstractValueConverter implements ValueConvert
 	 *
 	 * @return array
 	 */
-	public function convert($attributeCode, $data)
-	{
+	public function convert($attributeCode, $data){
             $convertedItem = [];
 
             foreach ($data as $value) {

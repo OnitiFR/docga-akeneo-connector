@@ -14,11 +14,7 @@ class DocgaAttributeSetter extends AbstractAttributeSetter
 	* @param AttributeValidatorHelper $attrValidatorHelper
 	* @param array                    $supportedTypes
 	*/
-	public function __construct(
-		ProductBuilderInterface $productBuilder,
-		AttributeValidatorHelper $attrValidatorHelper,
-		array $supportedTypes
-	) {
+	public function __construct(ProductBuilderInterface $productBuilder, AttributeValidatorHelper $attrValidatorHelper, array $supportedTypes){
 		parent::__construct($productBuilder, $attrValidatorHelper);
 		$this->supportedTypes = $supportedTypes;
 	}
@@ -31,12 +27,7 @@ class DocgaAttributeSetter extends AbstractAttributeSetter
 	* @param mixed              $data      The data to set
 	* @param array              $options   Options passed to the setter
 	*/
-	public function setAttributeData(
-		ProductInterface $product,
-		AttributeInterface $attribute,
-		$data,
-		array $options = []
-	) {
+	public function setAttributeData(ProductInterface $product, AttributeInterface $attribute, $data, array $options = []){
 		$options = $this->resolver->resolve($options);
 		$this->checkLocaleAndScope($attribute, $options['locale'], $options['scope'], 'text');
 		$this->setData($product, $attribute, $data, $options['locale'], $options['scope']);
@@ -51,15 +42,9 @@ class DocgaAttributeSetter extends AbstractAttributeSetter
 	* @param string             $locale
 	* @param string             $scope
 	*/
-	protected function setData(
-		ProductInterface $product,
-		AttributeInterface $attribute,
-		$data,
-		$locale,
-		$scope
-	) {
+	protected function setData(ProductInterface $product, AttributeInterface $attribute, $data, $locale, $scope){
 		$value = $product->getValue($attribute->getCode(), $locale, $scope);
-		if (null === $value) {
+		if (is_null($value)) {
 			$value = $this->productBuilder->addProductValue(
 				$product,
 				$attribute,

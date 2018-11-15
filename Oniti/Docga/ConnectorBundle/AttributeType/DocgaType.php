@@ -11,8 +11,7 @@ use Pim\Component\Catalog\Model\AttributeInterface;
 
 class DocgaType extends AbstractAttributeType
 {
-	public function getName()
-	{
+	public function getName(){
 		return 'oniti_catalog_docga';
 	}
 }
