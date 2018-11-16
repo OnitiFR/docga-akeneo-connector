@@ -24,7 +24,6 @@ define([
 			events: {
 				'click .add-file': 'selectFile',
 				'click .remove-file': 'removeFile',
-				'click .download-file': 'downloadFile',
 			},
 
 			// Les métadonnées de la norme DublinCore (hors title et source)
@@ -114,27 +113,24 @@ define([
 				data.shift()
 				return data.join('-').split('.')[0];
 			},
-
+			/**
+			 * Handler pour la sélection des fichiers
+			 * @return {[type]} [description]
+			 */
       selectFile: function(){
 				this.docgaApi.open()
       },
+			/**
+			 * Supprime un fichier
+			 * @param  {[type]} event [description]
+			 * @return {[type]}       [description]
+			 */
       removeFile: function(event){
 				var slug = this.getSlug(event)
-				console.log(slug)
 				this.assets = this.assets.filter(function(doc){
 					return doc.slug !== slug;
 				})
 				this.updateField();
-      },
-      downloadFile: function(event){
-				var slug = this.getSlug(event)
-				var doc = this.assets.filter(function(doc){
-					return doc.slug !== slug;
-				})[0]
-				if(doc) {
-					var win = window.open(doc.download, '_blank');
-  				win.focus();
-				}
       },
 		});
 
