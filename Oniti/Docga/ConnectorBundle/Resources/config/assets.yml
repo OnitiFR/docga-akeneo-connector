@@ -1,5 +1,4 @@
 css:
     onitidocgaconnector:
         - bundles/onitidocgaconnector/css/configuration.css
-        - bundles/onitidocgaconnector/css/docga-field.css
         - bundles/onitidocgaconnector/css/docga-modal.css
