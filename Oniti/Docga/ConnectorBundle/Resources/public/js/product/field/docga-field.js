@@ -15,14 +15,13 @@ define([
 			config: null,
 
 			// Selected Assets
-			assets: null,
+			assets: [],
 
 			// Prepares the template
 			fieldTemplate: _.template(fieldTemplate),
 
 			// Declaration of events
 			events: {
-				'click .display-file': 'displayFile',
 				'click .add-file': 'selectFile',
 				'click .remove-file': 'removeFile',
 				'click .download-file': 'downloadFile',
@@ -63,11 +62,23 @@ define([
 							alert(_.__('docga.field.an_error_has_occurred'));
 							return;
 						}
-
-						this.config = config;
+						this.docgaApi = new DocGaAPI(config.baseurl, config.api_key, config.api_secret)
+						this.docgaApi.setCallbackFilesSelected(this.callbackFilesSelected.bind(this))
 
 					}.bind(this)
 				);
+			},
+			/**
+			 * Retour de la modal suite à la sélection des fichiers
+			 * @param  {[type]} files [description]
+			 * @return {[type]}       [description]
+			 */
+			callbackFilesSelected: function (files){
+				var self = this;
+				files.forEach(function(file){
+					self.assets.push(file)
+				})
+				this.updateField();
 			},
 
 			/**
@@ -78,18 +89,10 @@ define([
 			renderInput: function (context) {
 				// Loads assets
 				this.assets = context.value.data ? JSON.parse(context.value.data) : [];
-
-				// Complete values
-				var inc, assets = this.assets.slice();
-
-				for(inc in assets) {
-					assets[inc].id = this.attribute.id + '-' + inc;
-				}
-
 				// Return the formatted template
 				return this.fieldTemplate({
 					id : this.attribute.id,
-					assets : assets
+					assets : this.assets
 				});
 			},
 
@@ -100,15 +103,39 @@ define([
 				this.setCurrentValue(this.assets && this.assets.length ? JSON.stringify(this.assets) : null);
 				this.render();
 			},
+			/**
+			 * Return the selected item
+			 *
+			 * @param {event}
+			 */
+			getSlug: function (event) {
+				var el = event.currentTarget || event.srcElement;
+				var data = el.id.split('-')
+				data.shift()
+				return data.join('-').split('.')[0];
+			},
 
-            displayFile: function(){
-            },
-            selectFile: function(){
-            },
-            removeFile: function(){
-            },
-            downloadFile: function(){
-            },
+      selectFile: function(){
+				this.docgaApi.open()
+      },
+      removeFile: function(event){
+				var slug = this.getSlug(event)
+				console.log(slug)
+				this.assets = this.assets.filter(function(doc){
+					return doc.slug !== slug;
+				})
+				this.updateField();
+      },
+      downloadFile: function(event){
+				var slug = this.getSlug(event)
+				var doc = this.assets.filter(function(doc){
+					return doc.slug !== slug;
+				})[0]
+				if(doc) {
+					var win = window.open(doc.download, '_blank');
+  				win.focus();
+				}
+      },
 		});
 
 		return AssetSelectionView;
