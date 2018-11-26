@@ -5,7 +5,7 @@
 
 | Akeneo PIM Community Edition |
 |:----------------------------:|
-    | v1.7.*                   |
+| v1.7.*                   |
 
 ## Installation
 ```bash
