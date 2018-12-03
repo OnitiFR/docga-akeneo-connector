@@ -74,8 +74,24 @@ define([
 			 */
 			callbackFilesSelected: function (files){
 				var self = this;
-				files.forEach(function(file){
-					self.assets.push(file)
+				var key_map = {
+					tags:'relation',
+					download:'file',
+					force_download:'downloadfile',
+					original_name:'name',
+					thumbnail:'thumbnail',
+					slug:'slug',
+					title:'title'
+				}
+				var key_allowed = Object.keys(key_map);
+
+				files.forEach(function(json){
+		      var data_parsed = Object.keys(json).reduce(function(prev,key){
+		      	if(key_allowed.indexOf(key) > -1){
+		          	return {...prev, [key_map[key]]:json[key]}
+		          }else return prev
+		      },{})
+					self.assets.push(data_parsed)
 				})
 				this.updateField();
 			},
