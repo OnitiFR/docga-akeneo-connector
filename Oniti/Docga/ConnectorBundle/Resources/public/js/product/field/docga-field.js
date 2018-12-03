@@ -83,6 +83,7 @@ define([
 					slug:'slug',
 					title:'title'
 				}
+				
 				var key_allowed = Object.keys(key_map);
 
 				files.forEach(function(json){
